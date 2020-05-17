@@ -10,9 +10,11 @@ class Room:
     def __str__(self):
         output = ""
 
-        output += f"You enter the {self.name}.\n{self.description}\n\n After a quick glance around the room, you notice the following items:\n"
+        output += f"You enter the {self.name}.\n{self.description}\n\n"
 
-        for item in self.items:
-            output += item.name + "\n"
+        if len(self.items)>0:
+            output+= f"After a quick glance around the room, you notice the following items:\n"
+            for item in self.items:
+                output += item.name + "\n"
 
         return output
